@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "MealTableViewController.tableView(UITableView, cellForRowAt : IndexPath) -&gt; UITableViewCell:MealTableViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MealTableViewController.loadSampleMeals() -&gt; ():MealTableViewController.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
