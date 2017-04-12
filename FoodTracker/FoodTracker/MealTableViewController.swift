@@ -59,10 +59,13 @@ class MealTableViewController: CoreDataTableViewController {
         let meal = fetchedResultsController!.object(at: indexPath) as! Meal
     
         cell.nameLabel.text = meal.name
-        let image: UIImage? = UIImage(data: meal.photo as! Data)
-        if image != nil {
+        
+        if let data = meal.photo {
+            if let image: UIImage? = UIImage(data: data as Data){
             cell.photoImageView.image = image
+            }
         }
+    
         cell.ratingControl.rating = Int(meal.rating)
         
         return cell

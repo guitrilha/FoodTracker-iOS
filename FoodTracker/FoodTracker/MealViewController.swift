@@ -37,10 +37,12 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
             navigationItem.title = meal.name
             nameTextField.text = meal.name
             
+            if meal.photo != nil{
             let image: UIImage? = UIImage(data: meal.photo as! Data)
             if image != nil {
                 photoImageView.image = image
             }
+        }
             ratingControl.rating = Int(meal.rating)
         }
         
@@ -123,8 +125,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
             meal!.name = name
             meal!.rating = Int64(rating)
         } else{
-            let newMeal = Meal(name: name, rating: Int64(rating), insertIntoManagedObjectContext: delegate.stack.context)
-            print(newMeal)
+            meal = Meal(name: name, rating: Int64(rating), insertIntoManagedObjectContext: delegate.stack.context)
         }
         
         guard let image = photoImageView.image else{
